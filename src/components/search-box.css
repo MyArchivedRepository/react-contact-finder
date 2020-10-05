@@ -1,0 +1,19 @@
+input  {
+    font-family: 'Merienda One', cursive;
+    margin: 0px auto 50px;
+    height: 50px;
+    background-color:#A9FFF7;
+    border: 5px solid #E8AEB7;
+    border-radius: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+input:focus {
+    border: 5px solid #E8AEB7;
+    outline: none;
+}
+input::placeholder{
+    text-align: center;
+}
+

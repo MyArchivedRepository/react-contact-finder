@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import CardList from "./components/card-list";
+import SearchBox from "./components/search-box";
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+  const [isChanged, setIsChanged] = useState(false);
+  const [filteredContacts, setFilteredContacts] = useState(contacts);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((users) => setContacts(users));
+  }, []);
+
+  const filter = (searchValue) => {
+    setIsChanged(true);
+    setFilteredContacts(
+      contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(searchValue)
+      )
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>ROBO CONTACT</h1>
+      <SearchBox onChange={filter} placeholder="search contact"/>
+      <CardList contacts={isChanged ? filteredContacts : contacts} />
     </div>
   );
 }

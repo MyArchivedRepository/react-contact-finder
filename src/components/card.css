@@ -1,0 +1,25 @@
+.card {
+    margin: auto;
+    width: 90%;
+    border-radius: 15px;
+    background: rgb(232,174,183);
+    background: linear-gradient(45deg, rgba(232,174,183,1) 0%, rgba(255,255,255,1) 50%, rgba(232,174,183,1) 100%);
+    box-shadow: 5px 10px 10px #618078;
+    transform: translateZ(1);
+    transition: all .2s ease-in-out;
+}
+
+.card img{
+    width: 250px;
+    border-radius: 50%;
+    border: 2px solid#618078;
+    margin-top: 50px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card p {
+    margin-bottom: 50px;
+}
