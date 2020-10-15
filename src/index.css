@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: 'Merienda One', cursive;
@@ -6,6 +8,7 @@ body {
   text-align: center;
   background: rgb(184,225,255);
   background: linear-gradient(135deg, rgba(184,225,255,1) 0%, rgba(169,255,247,1) 35%, rgba(148,251,171,1) 100%);
+  background-attachment: fixed;
   color: #0D0221;
 }
 
